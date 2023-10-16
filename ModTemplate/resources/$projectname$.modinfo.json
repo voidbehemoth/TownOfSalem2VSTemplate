@@ -1,0 +1,11 @@
+{
+  "HarmonyId": "voidbehemoth.$safeprojectname$",
+  "DisplayName": "$projectname$",
+  "Authors": [
+    "VoidBehemoth"
+  ],
+  "Description": "",
+  "Version": "1.0.0",
+  "RequiredMods": [],
+  "Settings": {}
+}
