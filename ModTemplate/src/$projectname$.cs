@@ -7,7 +7,7 @@ namespace $safeprojectname$
     {
         public static void Start()
         {
-            Utils.Logger.Log("ain't no way");
+            Utils.Logger.Log(PLUGIN_NAME + "has loaded!");
         }
     }
 

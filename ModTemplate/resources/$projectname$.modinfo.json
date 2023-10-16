@@ -1,8 +1,8 @@
 {
-  "HarmonyId": "voidbehemoth.$safeprojectname$",
+  "HarmonyId": "developer.$safeprojectname$",
   "DisplayName": "$projectname$",
   "Authors": [
-    "VoidBehemoth"
+    "developer"
   ],
   "Description": "",
   "Version": "1.0.0",
