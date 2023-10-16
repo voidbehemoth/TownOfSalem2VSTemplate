@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>SalemLoader Mod</Name>
+    <Description>Made for the SalemLoader by Curtis.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>SalemLoader Mod</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.csproj" File="$projectname$.csproj" ReplaceParameters="true">
+      <Folder Name="libs" TargetFolderName="libs">
+        <ProjectItem ReplaceParameters="false" TargetFileName="Assembly-CSharp_publicized.dll">Assembly-CSharp_publicized.dll</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="SalemModLoader.dll">SalemModLoader.dll</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="UnityEngine.CoreModule.dll">UnityEngine.CoreModule.dll</ProjectItem>
+      </Folder>
+      <Folder Name="resources" TargetFolderName="resources">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.modinfo.json">$projectname$.modinfo.json</ProjectItem>
+      </Folder>
+      <Folder Name="src" TargetFolderName="src">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.cs">$projectname$.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Utils.cs">Utils.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
