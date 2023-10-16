@@ -6,8 +6,8 @@ namespace $safeprojectname$
     public class Main
     {
         public static void Start()
-        {
-            Utils.Logger.Log(PLUGIN_NAME + "has loaded!");
+    {
+            $projectname$.Utils.Logger.Log($projectname$.ModInfoPLUGIN_NAME + "has loaded!");
         }
     }
 
