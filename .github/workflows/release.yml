@@ -21,8 +21,7 @@ jobs:
       - run: ls
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
-        working-directory: ./ModTemplate
         with:
           artifactErrorsFailBuild: true
-          artifacts: "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
+          artifacts: "./ModTemplate/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
           body: "Compatible with TOS2 Patch R.1.1.37. Check README.md for more instructions."
