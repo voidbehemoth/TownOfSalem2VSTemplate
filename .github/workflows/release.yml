@@ -18,9 +18,9 @@ jobs:
       - run: git archive -o "./releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
       - run: |
         git config --global user.name 'VoidBehemoth'
-        git config --global user.email 'voidbehemoth@gmail.com'
-        git commit -am "Automated release."
-        git push
+          git config --global user.email 'voidbehemoth@gmail.com'
+          git commit -am "Automated release."
+          git push
       - uses: actions/checkout@v4.1.0
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
