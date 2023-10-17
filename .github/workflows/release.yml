@@ -11,9 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.0
       - run: cd ./ModTemplate/
-      - run: tag="$(git describe --tags --abbrev=0)"
-      - run: git archive -o "../releases/SalemMod-${tag}.zip" HEAD
+      - name: Retrieve tag
+        id: tag
+        run: echo TAG_NAME="$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
+      - run: git archive -o "../releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
       - uses: ncipollo/release-action@v1.13.0
+        tag: create_release
         with:
-          artifacts: "../releases/${tag}.zip"
+          artifacts: "../releases/${{ steps.tag.outputs.TAG_NAME }}.zip"
         
