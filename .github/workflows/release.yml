@@ -16,15 +16,6 @@ jobs:
         run: echo TAG_NAME="$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
       - run: cd ./../
       - run: git archive -o "./releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
-      - run: |
-            git config --global user.name 'VoidBehemoth'
-            git config --global user.email 'voidbehemoth@gmail.com'
-            git add "./releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
-            git commit -am "This is an automated release."
-            git pull origin HEAD:master
-            git push origin HEAD:master
-            git tag -f "${{ steps.tag.outputs.TAG_NAME }}"
-            git push "${{ steps.tag.outputs.TAG_NAME }}" origin HEAD:master
       - uses: actions/checkout@v4.1.0
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
