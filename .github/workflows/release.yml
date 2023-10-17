@@ -20,5 +20,5 @@ jobs:
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
         with:
-          artifacts: "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
+          artifacts: "./ModTemplate/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
         
