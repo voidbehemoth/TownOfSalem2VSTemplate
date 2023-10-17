@@ -22,7 +22,7 @@ jobs:
       - run: |
             git config --global user.name 'VoidBehemoth'
             git config --global user.email 'voidbehemoth@gmail.com'
-            git add "./../releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
+            git add -f "./../releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
             git commit -am "Automated release."
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
