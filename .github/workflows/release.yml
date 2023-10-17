@@ -22,6 +22,7 @@ jobs:
             git add "./releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
             git commit -am "This is an automated release."
             git push origin HEAD:master
+            git pull
             git tag -f "${{ steps.tag.outputs.TAG_NAME }}"
             git push "{{ steps.tag.outputs.TAG_NAME }}"
       - uses: actions/checkout@v4.1.0
