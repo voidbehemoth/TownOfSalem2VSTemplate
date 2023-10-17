@@ -21,8 +21,8 @@ jobs:
             git config --global user.email 'voidbehemoth@gmail.com'
             git add "./releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
             git commit -am "This is an automated release."
+            git pull origin HEAD:master
             git push origin HEAD:master
-            git pull
             git tag -f "${{ steps.tag.outputs.TAG_NAME }}"
             git push "{{ steps.tag.outputs.TAG_NAME }}" origin HEAD:master
       - uses: actions/checkout@v4.1.0
