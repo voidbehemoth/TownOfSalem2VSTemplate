@@ -9,13 +9,13 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4.1.0
       - run: cd ./ModTemplate/
       - name: Retrieve tag
         id: tag
         run: echo TAG_NAME="$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
       - run: cd ./../
       - run: git archive -o "./releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
+      - uses: actions/checkout@v4.1.0
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
         with:
