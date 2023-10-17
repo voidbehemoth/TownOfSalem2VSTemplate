@@ -24,6 +24,7 @@ jobs:
             git config --global user.email 'voidbehemoth@gmail.com'
             git add -f "./../releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
             git commit -am "Automated release."
+      - uses: actions/checkout@v4.1.0
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
         with:
