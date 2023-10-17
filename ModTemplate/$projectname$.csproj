@@ -28,6 +28,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<EmbeddedResource Include="resources\$projectname$.modinfo.json"></EmbeddedResource>
+		<EmbeddedResource Include="resources\$projectname$.resources.images.thumbnail.png"></EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 		<Folder Include="libs\" />
 	</ItemGroup>
 </Project>
