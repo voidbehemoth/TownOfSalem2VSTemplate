@@ -16,7 +16,7 @@ jobs:
         run: echo TAG_NAME="$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
       - run: git archive -o "../releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
       - uses: ncipollo/release-action@v1.13.0
-        tag: create_release
+        id: create_release
         with:
           artifacts: "../releases/${{ steps.tag.outputs.TAG_NAME }}.zip"
         
