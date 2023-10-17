@@ -24,7 +24,7 @@ jobs:
             git pull origin HEAD:master
             git push origin HEAD:master
             git tag -f "${{ steps.tag.outputs.TAG_NAME }}"
-            git push "{{ steps.tag.outputs.TAG_NAME }}" origin HEAD:master
+            git push "${{ steps.tag.outputs.TAG_NAME }}" origin HEAD:master
       - uses: actions/checkout@v4.1.0
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
