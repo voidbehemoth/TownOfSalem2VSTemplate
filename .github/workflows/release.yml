@@ -3,12 +3,13 @@ on:
   push:
     tags:
       - '*'
+defaults:
+  run:
+    shell: bash
+    working-directory: ./ModTemplate
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./ModTemplate
     permissions:
       contents: write
     steps:
@@ -16,17 +17,11 @@ jobs:
       - name: Retrieve tag
         id: tag
         run: echo TAG_NAME="$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
-      - run: |
-            mkdir ./../releases
-            git archive -o "./../releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
-      - run: |
-            git config --global user.name 'VoidBehemoth'
-            git config --global user.email 'voidbehemoth@gmail.com'
-            git add -f "./../releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
-            git commit -am "Automated release."
+      - run: git archive -o "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
       - uses: actions/checkout@v4.1.0
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
         with:
-          artifacts: "./releases/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
+          artifactErrorsFailBuild: true
+          artifacts: "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
           body: "Compatible with TOS2 Patch R.1.1.37. Check README.md for more instructions."
