@@ -18,10 +18,11 @@ jobs:
         id: tag
         run: echo TAG_NAME="$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
       - run: git archive -o "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
+      - run: echo ls
       - uses: actions/checkout@v4.1.0
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
         with:
           artifactErrorsFailBuild: true
-          artifacts: "SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
+          artifacts: "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
           body: "Compatible with TOS2 Patch R.1.1.37. Check README.md for more instructions."
