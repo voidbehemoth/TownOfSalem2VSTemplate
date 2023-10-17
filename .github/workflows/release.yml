@@ -10,9 +10,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4.1.0
-      - run: tag="$(git describe --tags --abbrev=0)"
       - run: cd ./ModTemplate/
-      - run: git archive -o "../releases/${tag}.zip" HEAD
+      - run: tag="$(git describe --tags --abbrev=0)"
+      - run: git archive -o "../releases/SalemMod-${tag}.zip" HEAD
       - uses: ncipollo/release-action@v1.13.0
         with:
           artifacts: "../releases/${tag}.zip"
