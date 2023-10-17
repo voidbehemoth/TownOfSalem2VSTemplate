@@ -44,7 +44,7 @@ Requires [Visual Studio](https://visualstudio.microsoft.com/) and the [SalemModL
 ## FAQ
 
 ### "Where is the project templates folder?"
-If you are on Windows, it can be found at C:\Users\\<username>\Documents\Visual Studio \<version>\Templates\ProjectTemplates\
+If you are on Windows, it can be found at C:\Users\\\<username>\Documents\Visual Studio \<version>\Templates\ProjectTemplates\
 
 ### "Where is the mods folder?"
 Open Steam. Right click on Town of Salem 2. Select Manage > Browse local files. This should open up your game folder. Look for a folder called 'SalemModLoader,' and open it. Inside of that folder should be a 'Mods' folder.
