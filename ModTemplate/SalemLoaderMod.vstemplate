@@ -1,19 +1,22 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
-  <TemplateData>
-    <Name>SalemLoader Mod</Name>
-    <Description>A mod for Town of Salem 2. Made for Curtis's SalemLoader by VoidBehemoth. Unofficial.</Description>
-    <ProjectType>CSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
-    <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>SalemLoader Mod</DefaultName>
-    <ProvideDefaultName>true</ProvideDefaultName>
-    <LocationField>Enabled</LocationField>
-    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <CreateInPlace>true</CreateInPlace>
-    <Icon>__TemplateIcon.png</Icon>
-  </TemplateData>
+	<TemplateData>
+        <Name>SalemModLoader Mod</Name>
+        <Description>A mod for Town of Salem 2. Made for Curtis's SalemModLoader by VoidBehemoth. Unofficial.</Description>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType></ProjectSubType>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>SalemLoader Mod</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <CreateInPlace>true</CreateInPlace>
+        <Icon>__TemplateIcon.png</Icon>
+    </TemplateData>
     <TemplateContent>
+		<CustomParameters>
+			<CustomParameter Name="$framework$" Value="net481"/>
+		</CustomParameters>
         <Project TargetFileName="$projectname$.csproj" File="$projectname$.csproj" ReplaceParameters="true">
             <Folder Name="libs" TargetFolderName="libs">
                 <ProjectItem ReplaceParameters="false" TargetFileName="Assembly-CSharp_publicized.dll">Assembly-CSharp_publicized.dll</ProjectItem>
