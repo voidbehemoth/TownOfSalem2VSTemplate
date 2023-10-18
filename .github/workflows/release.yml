@@ -22,7 +22,7 @@ jobs:
           repository: "Curtbot9000/SalemModLoader"
           latest: true
           fileName: "SalemModLoader.dll"
-          out-file-path: "libs"
+          out-file-path: "ModTemplate/libs"
       - run: |
               git config --global user.name 'VoidBehemoth'
               git config --global user.email 'voidbehemoth@gmail.com'
@@ -37,4 +37,4 @@ jobs:
         with:
           artifactErrorsFailBuild: true
           artifacts: "./ModTemplate/SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip"
-          body: "Compatible with TOS2 Patch R.1.1.37. Check README.md for more instructions."
+          body: "Fixed error where image caused VS to not fully load template.\n\nCompatible with TOS2 Patch R.1.1.37. Check README.md for more instructions."
