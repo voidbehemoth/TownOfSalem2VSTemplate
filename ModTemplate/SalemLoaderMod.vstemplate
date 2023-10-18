@@ -14,9 +14,6 @@
         <Icon>__TemplateIcon.png</Icon>
     </TemplateData>
     <TemplateContent>
-		<CustomParameters>
-			<CustomParameter Name="$framework$" Value="net481"/>
-		</CustomParameters>
         <Project TargetFileName="$projectname$.csproj" File="$projectname$.csproj" ReplaceParameters="true">
             <Folder Name="libs" TargetFolderName="libs">
                 <ProjectItem ReplaceParameters="false" TargetFileName="Assembly-CSharp_publicized.dll">Assembly-CSharp_publicized.dll</ProjectItem>
