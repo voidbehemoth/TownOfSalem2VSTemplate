@@ -17,6 +17,12 @@ jobs:
       - name: Retrieve tag
         id: tag
         run: echo TAG_NAME="$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
+      - uses: robinraju/release-downloader@v1.8
+        with:
+          repository: "Curtbot9000/SalemModLoader"
+          latest: true
+          fileName: "SalemModLoader.dll"
+          out-file-path: "libs"
       - run: git archive -o "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
       - run: ls
       - uses: ncipollo/release-action@v1.13.0
