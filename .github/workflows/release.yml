@@ -24,6 +24,9 @@ jobs:
           fileName: "SalemModLoader.dll"
           out-file-path: "libs"
       - run: |
+              git config --global user.name 'VoidBehemoth'
+              git config --global user.email 'voidbehemoth@gmail.com
+              git status
               git add "./libs/SalemModLoader.dll"
               git commit -am "Automatically download SalemModLoader"
       - uses: actions/checkout@v4.1.0
