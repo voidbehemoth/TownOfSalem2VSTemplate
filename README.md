@@ -12,9 +12,12 @@ Requires [Visual Studio](https://visualstudio.microsoft.com/) and the [SalemModL
 1. Install all [prerequisites](#prerequisites) and [this template](#how-to-install).
 2. Open Visual Studio.
 3. Select File > New > Project in Visual Studio. This should open the project creation window.
+![image](https://github.com/voidbehemoth/TownOfSalem2VSTemplate/blob/update-documentation/.github/documentation/images/selectproject.png?raw=true)
 4. Search for 'SalemModLoader Mod' in the search bar. Select it.
+![image](https://github.com/voidbehemoth/TownOfSalem2VSTemplate/blob/update-documentation/.github/documentation/images/search.png?raw=true)
 5. Hit 'Next.'
 6. Fill out your project name and location. Keep in mind that the project name will be used as the default for a lot values.
+![image](https://github.com/voidbehemoth/TownOfSalem2VSTemplate/blob/update-documentation/.github/documentation/images/MyMod.png?raw=true)
 7. Press 'Create.'
 8. You made a mod! 
 
