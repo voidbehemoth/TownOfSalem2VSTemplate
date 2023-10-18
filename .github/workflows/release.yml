@@ -26,11 +26,9 @@ jobs:
       - run: |
               git config --global user.name 'VoidBehemoth'
               git config --global user.email 'voidbehemoth@gmail.com'
-              git status
               git add "./libs/SalemModLoader.dll"
               git commit -am "Automatically download SalemModLoader"
-      - uses: actions/checkout@v4.1.0
-      - run: git archive -o "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
+              git archive -o "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
       - run: ls
       - uses: ncipollo/release-action@v1.13.0
         id: create_release
