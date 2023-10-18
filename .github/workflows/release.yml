@@ -23,6 +23,10 @@ jobs:
           latest: true
           fileName: "SalemModLoader.dll"
           out-file-path: "libs"
+      - run: |
+              git add "./libs/SalemModLoader.dll"
+              git commit -am "Automatically download SalemModLoader"
+      - uses: actions/checkout@v4.1.0
       - run: git archive -o "./SalemMod-${{ steps.tag.outputs.TAG_NAME }}.zip" HEAD
       - run: ls
       - uses: ncipollo/release-action@v1.13.0
