@@ -15,11 +15,6 @@
     </TemplateData>
     <TemplateContent>
         <Project TargetFileName="$projectname$.csproj" File="$projectname$.csproj" ReplaceParameters="true">
-            <Folder Name="libs" TargetFolderName="libs">
-                <ProjectItem ReplaceParameters="false" TargetFileName="Assembly-CSharp_publicized.dll">Assembly-CSharp_publicized.dll</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="SalemModLoader.dll">SalemModLoader.dll</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="UnityEngine.CoreModule.dll">UnityEngine.CoreModule.dll</ProjectItem>
-            </Folder>
 			<Folder Name="src" TargetFolderName="src">
 				<ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.cs">$projectname$.cs</ProjectItem>
 				<ProjectItem ReplaceParameters="true" TargetFileName="Utils.cs">Utils.cs</ProjectItem>
