@@ -9,15 +9,21 @@
 		<LangVersion>10.0</LangVersion>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<ImplicitUsings>disable</ImplicitUsings>
+		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+
+		<SalemModLoaderLink>https://github.com/Curtbot9000/SalemModLoader/releases/latest/download/SalemModLoader.dll</SalemModLoaderLink>
+		<SteamLibrarypath>E:\SteamLibrary</SteamLibrarypath>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="HarmonyX" Version="2.10.2" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Reference Include="Assembly-CSharp">
-			<HintPath>.\libs\Assembly-CSharp_publicized.dll</HintPath>
+		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		
+		<Reference Include="Assembly-CSharp" Publicize="true">
+			<HintPath>.\libs\Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="SalemModLoader">
 			<HintPath>.\libs\SalemModLoader.dll</HintPath>
@@ -34,4 +40,13 @@
 	<ItemGroup>
 		<Folder Include="libs\" />
 	</ItemGroup>
+
+	<Target Name="PrepareBuildFiles" AfterTargets="BeforeBuild">
+		<DownloadFile SourceUrl="$(SalemModLoaderLink)" DownloadedFile="SalemModLoader.dll" DestinationFolder="$(MSBuildThisFileDirectory)\libs" SkipUnchangedFiles="true">
+			<Output TaskParameter="DownloadedFile" ItemName="Content" />
+		</DownloadFile>
+		<Copy SourceFiles="$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\Assembly-CSharp.dll;$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\UnityEngine.CoreModule.dll;"
+			  DestinationFolder="$(MSBuildThisFileDirectory)\libs"
+			  SkipUnchangedFiles="true" />
+	</Target>
 </Project>
