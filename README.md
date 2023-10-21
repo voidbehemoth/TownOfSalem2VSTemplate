@@ -16,7 +16,7 @@ Requires [Visual Studio](https://visualstudio.microsoft.com/) and the [SalemModL
 5. Hit 'Next.'
 6. Fill out your project name and location. Keep in mind that the project name will be used as the default for a lot values.
 7. Press 'Create.'
-8. You made a mod! 
+8. You made a mod! Remember to change the SteamLibraryPath property in the '\<yourprojectname>.csproj' file. 
 
 ### Test That It Worked
 
