@@ -11,8 +11,9 @@
 		<ImplicitUsings>disable</ImplicitUsings>
 		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
 		<SalemModLoaderLink>https://github.com/Curtbot9000/SalemModLoader/releases/latest/download/SalemModLoader.dll</SalemModLoaderLink>
-		<!--Be sure to replace this with the path to the Steam Library-->
-		<SteamLibrarypath>EXAMPLE PATH TO STEAMLIBRARY</SteamLibrarypath>
+		
+		<!--Be sure to replace this with the path to the Steam Library (use two slashes after drives)-->
+		<SteamLibrarypath>VALUE</SteamLibrarypath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -41,6 +42,7 @@
 		<DownloadFile SourceUrl="$(SalemModLoaderLink)" DownloadedFile="SalemModLoader.dll" DestinationFolder="$(MSBuildThisFileDirectory)\libs" SkipUnchangedFiles="true">
 			<Output TaskParameter="DownloadedFile" ItemName="Content" />
 		</DownloadFile>
-		<Copy SourceFiles="$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\Assembly-CSharp.dll;$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\UnityEngine.CoreModule.dll;" DestinationFolder="$(MSBuildThisFileDirectory)\libs" SkipUnchangedFiles="true" />
+		<Exec Command="robocopy &quot;$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed&quot; .\libs Assembly-CSharp.dll /j /mt" IgnoreExitCode="true"/>
+		<Exec Command="robocopy &quot;$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed&quot; .\libs UnityEngine.CoreModule.dll /j /mt" IgnoreExitCode="true"/>
 	</Target>
 </Project>
