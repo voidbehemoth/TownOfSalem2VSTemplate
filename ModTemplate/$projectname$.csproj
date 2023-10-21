@@ -10,9 +10,9 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-
 		<SalemModLoaderLink>https://github.com/Curtbot9000/SalemModLoader/releases/latest/download/SalemModLoader.dll</SalemModLoaderLink>
-		<SteamLibrarypath>E:\SteamLibrary</SteamLibrarypath>
+		<!--Be sure to replace this with the path to the Steam Library-->
+		<SteamLibrarypath>EXAMPLE PATH TO STEAMLIBRARY</SteamLibrarypath>
 	</PropertyGroup>
 
 	<ItemGroup>
