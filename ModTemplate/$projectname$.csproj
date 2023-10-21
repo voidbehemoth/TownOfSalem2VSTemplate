@@ -37,16 +37,10 @@
 		<EmbeddedResource Include="resources\$projectname$.modinfo.json"></EmbeddedResource>
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="libs\" />
-	</ItemGroup>
-
 	<Target Name="PrepareBuildFiles" AfterTargets="BeforeBuild">
 		<DownloadFile SourceUrl="$(SalemModLoaderLink)" DownloadedFile="SalemModLoader.dll" DestinationFolder="$(MSBuildThisFileDirectory)\libs" SkipUnchangedFiles="true">
 			<Output TaskParameter="DownloadedFile" ItemName="Content" />
 		</DownloadFile>
-		<Copy SourceFiles="$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\Assembly-CSharp.dll;$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\UnityEngine.CoreModule.dll;"
-			  DestinationFolder="$(MSBuildThisFileDirectory)\libs"
-			  SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\Assembly-CSharp.dll;$(SteamLibraryPath)\steamapps\common\Town of Salem 2\TownOfSalem2_Data\Managed\UnityEngine.CoreModule.dll;" DestinationFolder="$(MSBuildThisFileDirectory)\libs" SkipUnchangedFiles="true" />
 	</Target>
 </Project>
