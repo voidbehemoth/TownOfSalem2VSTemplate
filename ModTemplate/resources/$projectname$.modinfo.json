@@ -1,11 +1,76 @@
 {
-  "HarmonyId": "developer.$safeprojectname$",
+  "HarmonyId": "author.$safeprojectname$",
   "DisplayName": "$projectname$",
-  "Authors": [
-    "developer"
-  ],
-  "Description": "",
+  "Authors": [ "Your name here", "Your optional co-author" ],
+  "Description": "Describe your masterpiece",
   "Version": "1.0.0",
+  "Platforms": [ "Windows", "Mac" ],
   "RequiredMods": [],
-  "Settings": {}
+  "ConflictingMods": [],
+  "Settings": {
+    "CheckboxSettings": [
+      {
+        "Name": "Placeholder Checkbox",
+        "SettingID": "placeholder.checkbox",
+        "Description": "The placeholder checkbox of all time",
+        "DefaultValue": true,
+        "AvailableInGame": true
+      }
+    ],
+    "TextInputSettings": [
+      {
+        "Name": "Placeholder TextInput",
+        "SettingID": "placeholder.textinput",
+        "Description": "The placeholder inputbox of all time",
+        "DefaultValue": "Default Text",
+        "Regex": "[A-Za-z]",
+        "CharacterLimit": 10,
+        "AvailableInGame": true
+      }
+    ],
+    "IntegerInputSettings": [
+      {
+        "Name": "Placeholder IntegerInput",
+        "SettingID": "placeholder.intinput",
+        "Description": "The placeholder integer inputbox of all time",
+        "DefaultValue": 5,
+        "MinValue": 0,
+        "MaxValue": 10,
+        "AvailableInGame": true
+      }
+    ],
+    "SliderSettings": [
+      {
+        "Name": "Placeholder Slider",
+        "SettingID": "placeholder.slider",
+        "Description": "The placeholder slider of all time",
+        "DefaultValue": 0.5,
+        "MinValue": 0.0,
+        "MaxValue": 1.0,
+        "AvailableInGame": true
+      }
+    ],
+    "DropdownSettings": [
+      {
+        "Name": "Placeholder Dropdown",
+        "SettingID": "placeholder.dropdown",
+        "Description": "The placeholder dropdown of all time",
+        "Options": [
+          "Option 1",
+          "Option 2",
+          "Option 3"
+        ],
+        "AvailableInGame": true
+      }
+    ],
+    "ColorPickerSettings": [
+      {
+        "Name": "Placeholder Color Picker",
+        "SettingID": "placeholder.colorpicker",
+        "Description": "The placeholder color picker of all time",
+        "DefaultValue": "#696969",
+        "AvailableInGame": true
+      }
+    ]
+  }
 }
